@@ -85,17 +85,20 @@ WSGI_APPLICATION = 'codestar.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-####################################################
-#      Comment out preloaded database code         #
-####################################################
+##################################################################################
+#      Comment out preloaded database code and add new database link code        #
+##################################################################################
 #DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.sqlite3',
 #        'NAME': BASE_DIR / 'db.sqlite3',
 #    }
-####################################################
-#   End of commented out preloaded database code   #
-####################################################
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+}
+#################################################################################
+#   End of commented out preloaded database code and added new database link    #
+#################################################################################
 
 
 
