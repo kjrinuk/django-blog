@@ -30,7 +30,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY =  os.environ.get("SECRET_KEY") #'django-insecure-%z0+=8+9t2@*g#8l4z7mmr+&p9t&5hdd)zb(con1i_3ex22pak'
+SECRET_KEY = os.environ.get("SECRET_KEY") #'django-insecure-%z0+=8+9t2@*g#8l4z7mmr+&p9t&5hdd)zb(con1i_3ex22pak'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -100,6 +100,11 @@ DATABASES = {
 #   End of commented out preloaded database code and added new database link    #
 #################################################################################
 
+#  Add trusted origins for apps
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.codeinstitute-ide.net",
+    "https://*.herokuapp.com"
+]
 
 
 
